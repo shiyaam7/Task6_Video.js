@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet">
+  <script src="https://vjs.zencdn.net/7.17.0/video.js"></script>
+  <title>Video.js</title>
+</head>
+<body>
+
+<video id="mergedVideo" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
+  <source src="../Task6/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4" type="video/mp4" />
+  <source src="../Task6/video/How to brand yourself at workplace.mp4" type="video/mp4" />
+</video>
+
+<script>
+  var player = videojs('mergedVideo');
+
+  // Switch video when the 'ended' event is triggered
+  player.on('ended', function() {
+    // Determine which video just ended and switch to the other
+    if (player.currentSrc() === '../Task6/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4') {
+      player.src('../Task6/video/How to brand yourself at workplace.mp4');
+    } else {
+      player.src('../Task6/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4');
+    }
+
+    // Set the current time to 0 before playing the next video
+    player.currentTime(0);
+
+    // Play the next video
+    player.play();
+  });
+
+  // Play the first video when the page loads
+  player.play();
+</script>
+
+</body>
+</html>
