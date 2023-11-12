@@ -10,8 +10,8 @@
 <body>
 
 <video id="mergedVideo" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
-  <source src="../Task6/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4" type="video/mp4" />
-  <source src="../Task6/video/How to brand yourself at workplace.mp4" type="video/mp4" />
+  <source src="/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4" type="video/mp4" />
+  <source src="/video/How to brand yourself at workplace.mp4" type="video/mp4" />
 </video>
 
 <script>
@@ -20,10 +20,10 @@
   // Switch video when the 'ended' event is triggered
   player.on('ended', function() {
     // Determine which video just ended and switch to the other
-    if (player.currentSrc() === '../Task6/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4') {
-      player.src('../Task6/video/How to brand yourself at workplace.mp4');
+    if (player.currentSrc() === '/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4') {
+      player.src('/video/How to brand yourself at workplace.mp4');
     } else {
-      player.src('../Task6/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4');
+      player.src('/video/QUANTUMHUNTS - for recruiters and hiring managers.mp4');
     }
 
     // Set the current time to 0 before playing the next video
